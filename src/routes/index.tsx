@@ -1,4 +1,4 @@
-import { Home } from "pages/Home";
+import { Home, PalindromeChecker } from "pages";
 import {
   Routes as Switch,
   Route,
@@ -11,6 +11,7 @@ export const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" element={<Home />} />
+        <Route path="palindrome-checker" element={<PalindromeChecker />} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Switch>
     </BrowserRouter>
