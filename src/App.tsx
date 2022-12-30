@@ -1,17 +1,12 @@
-import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { Routes } from "./routes";
 import "./App.css";
+import { GlobalStyles, Theme } from "themes";
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-        <Route path="*" element={<Navigate to={"/"} />} />
-      </Routes>
-    </BrowserRouter>
+    <Theme>
+      <GlobalStyles />
+      <Routes />
+    </Theme>
   );
 };
-
-function Hello() {
-  return <h1>Hello FreeCodeCamp</h1>;
-}
