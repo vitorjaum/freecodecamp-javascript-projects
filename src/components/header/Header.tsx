@@ -14,15 +14,25 @@ const Logo = styled.img`
   display: block;
   height: 24px;
   margin: 7px 0;
-  width: auto;
+  /* width: auto; */
+`;
+
+const Title = styled.a`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #f5f6f7;
+  gap: 0 5px;
+  font-size: 1.5rem;
 `;
 
 export const Header = () => {
   return (
     <HeaderSite>
-      <a href="/">
+      <Title href="/">
+        <p>Desafios FreeCodeCamp</p>
         <Logo src="logo.jpg" alt="" />
-      </a>
+      </Title>
     </HeaderSite>
   );
 };
