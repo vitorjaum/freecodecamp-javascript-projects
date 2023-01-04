@@ -8,8 +8,9 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
       border: 0;
       box-sizing: border-box;
       font-family: 'Lato', sans-serif;
-      text-decoration: none;
-   }
+      text-decoration: none;            
+      outline: none;
+   }   
 
    body {
       background-color: ${({ theme }) => theme.colors.primaryColor};
