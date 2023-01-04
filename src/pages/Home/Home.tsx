@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const ChallengesList = styled.ul`
   margin-top: 2em;
+  width: 25em;
 `;
 
 const ChallengeItem = styled.li`
@@ -38,25 +39,23 @@ export const Home: React.FC = () => {
       <Main>
         <ChallengesList>
           <ChallengeItem>
-            <Link href="palindrome-checker">
-              Desafio: Verificador de palíndromo
-            </Link>
+            <Link href="palindrome-checker">Verificador de palíndromo</Link>
           </ChallengeItem>
           <ChallengeItem>
             <Link href="roman-numeral-converter">
-              Desafio: Conversor de numerais romanos
+              Conversor de numerais romanos
             </Link>
           </ChallengeItem>
           <ChallengeItem>
-            <Link href="ceasars-cipher">Desafio: Cifra de César</Link>
+            <Link href="ceasars-cipher"> Cifra de César</Link>
           </ChallengeItem>
           <ChallengeItem>
             <Link href="telephone-number-validator">
-              Desafio: Validador de Número de telefone
+              Validador de Número de telefone
             </Link>
           </ChallengeItem>
           <ChallengeItem>
-            <Link href="cash-register">Desafio: Caixa registradora</Link>
+            <Link href="cash-register"> Caixa registradora</Link>
           </ChallengeItem>
         </ChallengesList>
       </Main>
