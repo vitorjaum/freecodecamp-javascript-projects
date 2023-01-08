@@ -2,3 +2,4 @@ export * from "./Header";
 export * from "./Input";
 export * from "./Title";
 export * from "./Button";
+export * from "./Result";
