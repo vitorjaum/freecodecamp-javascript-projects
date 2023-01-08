@@ -5,7 +5,7 @@ type ResultProps = {
 };
 
 export const Result = styled.div<ResultProps>`
-  height: 2.5em;
+  min-height: 2.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,7 @@ export const Result = styled.div<ResultProps>`
   margin: 0.5em 0;
   background-color: grey;
   color: #f5f6f7;
+  word-break: break-all;
   ${(props) =>
     props.messageTheme == "redMessage" &&
     css`
