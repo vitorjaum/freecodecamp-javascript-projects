@@ -33,21 +33,35 @@ export const RomanConverter: React.FC = () => {
 
   function convertToRoman(num: number | any) {
     let number = "";
-    if (num > 0 && num !== "") {
-      for (let i = 0; i < romanValues.length; i++) {
-        if (num >= romanValues[i]) {
-          number += romanChar[i];
-          num = num - romanValues[i];
-          i = i - 1;
+
+    if (num > 0) {
+      if (num > 100000) {
+        getThousands(num);
+      } else {
+        for (let i = 0; i < romanValues.length; i++) {
+          if (num >= romanValues[i]) {
+            number += romanChar[i];
+            num = num - romanValues[i];
+            i = i - 1;
+          }
         }
+        setStyle("default");
+        setResult(`Result: ${number}`);
       }
-      setStyle("default");
-      setResult(`Result: ${number}`);
-    } else {
+    } else if (num !== "") {
       setStyle("redMessage");
       setResult("only numbers above 0");
+    } else {
+      setStyle("default");
+      setResult("Result:");
     }
-    num == "" && setStyle("default");
+  }
+
+  function getThousands(thousandValue: number) {
+    let thousandRoman = "";
+    const thousandsChar = Array(thousandValue / 1000).fill("M");
+    thousandsChar.map((char) => (thousandRoman += char));
+    setResult(thousandRoman);
   }
 
   return (
@@ -57,7 +71,9 @@ export const RomanConverter: React.FC = () => {
         <Title>Roman Numeral Converter</Title>
         <div>
           <InputTxt inputHandler={(e: any) => convertToRoman(e.target.value)} />
-          <Result messageTheme={style}>{result}</Result>
+          <Result messageTheme={style}>
+            <p>{result}</p>
+          </Result>
         </div>
       </Main>
     </>
