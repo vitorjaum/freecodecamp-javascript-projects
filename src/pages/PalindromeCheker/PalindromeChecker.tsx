@@ -39,11 +39,11 @@ export const PalindromeChecker = () => {
     str == "" && setNewStyle(`background-color: grey`);
     word?.map((char, idx) => {
       if (char !== reverseWord?.[idx]) {
-        setResult("Palindrome");
+        setResult("Palindromen't");
         setNewStyle(`background-color: #ffadad; color: #850000;`);
       } else {
         setNewStyle(`background-color: #cbffad; color: #008500;`);
-        setResult("Palindromen't");
+        setResult("Palindrome");
       }
     });
   };
