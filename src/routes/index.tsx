@@ -19,14 +19,14 @@ export const Routes = () => {
       <Switch>
         <Route path="*" element={<Navigate to={"/"} />} />
         <Route path="/" element={<Home />} />
-        <Route path="palindrome-checker" element={<PalindromeChecker />} />
-        <Route path="roman-numeral-converter" element={<RomanConverter />} />
-        <Route path="ceasars-cipher" element={<CeasarsCipher />} />
+        <Route path="/palindrome-checker" element={<PalindromeChecker />} />
+        <Route path="/roman-numeral-converter" element={<RomanConverter />} />
+        <Route path="/ceasars-cipher" element={<CeasarsCipher />} />
         <Route
-          path="telephone-number-validator"
+          path="/telephone-number-validator"
           element={<TelephoneValidator />}
         />
-        <Route path="cash-register" element={<CashRegister />} />
+        <Route path="/cash-register" element={<CashRegister />} />
       </Switch>
     </BrowserRouter>
   );
