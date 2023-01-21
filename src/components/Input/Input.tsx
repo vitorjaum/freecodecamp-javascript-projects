@@ -1,9 +1,5 @@
+import { Result } from "components";
 import styled from "styled-components";
-
-type inputTxtProps = {
-  inputName?: string;
-  inputHandler?: React.ChangeEventHandler<HTMLInputElement>;
-};
 
 const Input = styled.input`
   background-color: #0a0a23;
@@ -26,9 +22,18 @@ const Title = styled.label`
   font-size: 18px;
 `;
 
+type inputTxtProps = {
+  inputName?: string;
+  inputHandler?: React.ChangeEventHandler<HTMLInputElement>;
+  value?: any;
+  placeholder?: string;
+};
+
 export const InputTxt: React.FC<inputTxtProps> = ({
   inputName,
   inputHandler,
+  value,
+  placeholder,
 }) => {
   return (
     <div>
@@ -40,7 +45,8 @@ export const InputTxt: React.FC<inputTxtProps> = ({
       <Input
         type="text"
         onChange={inputHandler}
-        placeholder="isso não existe"
+        placeholder={placeholder}
+        value={value}
       />
     </div>
   );
