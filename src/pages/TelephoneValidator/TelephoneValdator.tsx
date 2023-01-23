@@ -1,23 +1,5 @@
-import { Header, InputTxt, Main, Select, Title } from "components";
-import { SetStateAction, useState } from "react";
-
-function telephoneCheck(str: string) {
-  let result = false;
-  let phoneNumber = str;
-
-  const firstRegex = /^1?\s?\d{3}-\d{3}-\d{4}/.test(phoneNumber);
-  const secondRegex = /^1?\s?\d{3}\s\d{3}\s\d{4}/.test(phoneNumber);
-  const thirdRegex = /^1?\s?\(\d{3}\)\s?\d{3}-\d{4}/.test(phoneNumber);
-  const fourthRegex = /^1?\s?\d{10}$/.test(phoneNumber);
-
-  if (firstRegex) result = true;
-  if (secondRegex) result = true;
-  if (thirdRegex) result = true;
-  if (fourthRegex) result = true;
-  return result;
-}
-
-telephoneCheck("(555)555-5555");
+import { Button, Header, InputTxt, Main, Select, Title } from "components";
+import { useState } from "react";
 
 const firstRegex = (val: string) => {
   // 555-555-5555
@@ -51,22 +33,17 @@ const fourthRegex = (val: string) => {
   return val.replace(/\D/g, "").replace(/(\d{10})(\d)/, "$1");
 };
 
-const fifthRegex = (val: string) => {
-  // 1 555 555 5555
-  return val
-    .replace(/\D/g, "")
-    .replace(/\1/, "$1")
-    .replace(/(\d{3})(\d)/, "$1 $2")
-    .replace(/(\d{3})(\d)/, "$1 $2")
-    .replace(/(\d{4})(\d)/, "$1");
-};
-
 export const TelephoneValidator = () => {
   const [mask, setMask] = useState("firstRegex");
   const [value, setValue] = useState("");
+  const [codeCond, setCodeCond] = useState(false);
   const [placeholder, setPlaceholder] = useState("555-555-5555");
+  const codeCountry = "1 ";
 
-  const inputValidator = (str: any, mask: string) => {
+  const inputValidator = (str: string, mask: string) => {
+    if (codeCond) {
+      str = str.slice(2);
+    }
     switch (mask) {
       case "555-555-5555":
         return firstRegex(str);
@@ -76,11 +53,14 @@ export const TelephoneValidator = () => {
         return thirdRegex(str);
       case "5555555555":
         return fourthRegex(str);
-      case "1 555 555 5555":
-        return fifthRegex(str);
       default:
         return firstRegex(str);
     }
+  };
+
+  const selectHandler = (value: string) => {
+    setPlaceholder(value);
+    setMask(value);
   };
 
   return (
@@ -91,19 +71,16 @@ export const TelephoneValidator = () => {
         <div>
           <InputTxt
             inputName="Phone Number"
-            inputHandler={(e: any) =>
-              setValue(inputValidator(e.target.value, mask))
-            }
+            inputHandler={(e) => setValue(inputValidator(e.target.value, mask))}
             placeholder={placeholder}
-            value={value}
+            value={`${codeCond ? codeCountry : ""}${value}`}
           />
-
-          <Select onChange={(e) => setMask(e.target.value)}>
+          <Button onClick={() => setCodeCond(!codeCond)}>Country Code</Button>
+          <Select onChange={(e) => selectHandler(e.target.value)}>
             <option value="555-555-5555">555-555-5555</option>
             <option value="(555)555-5555">(555)555-5555</option>
             <option value="555 555 5555">555 555 5555</option>
             <option value="5555555555">5555555555</option>
-            <option value="1 555 555 5555">1 555 555 5555</option>
           </Select>
         </div>
       </Main>
