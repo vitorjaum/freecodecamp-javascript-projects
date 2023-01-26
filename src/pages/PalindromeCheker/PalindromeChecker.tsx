@@ -5,18 +5,26 @@ export const PalindromeChecker = () => {
   const [result, setResult] = useState("");
   const [newStyle, setNewStyle] = useState("");
 
-  const checkWord = (str: string) => {
+  const inputHandler = (str: string) => {
     const word = str.toLowerCase().match(/[a-z0-9]/gi);
-    const reverseWord = word && [...word]?.reverse();
+    const reverseWord = word && [...word];
+    let isPalindrome = true;
+    reverseWord?.reverse();
+    console.log({ reverseWord });
+    if (str == "") {
+      setNewStyle(`default`);
+    }
 
-    str == "" && setNewStyle(`default`);
     word?.map((char, idx) => {
-      if (char !== reverseWord?.[idx]) {
-        setResult("Palindromen't");
-        setNewStyle("redMessage");
-      } else {
-        setNewStyle("greenMessage");
-        setResult("Palindrome");
+      if (isPalindrome) {
+        if (char !== reverseWord?.[idx]) {
+          setResult("Palindromen't");
+          setNewStyle("redMessage");
+          isPalindrome = false;
+        } else {
+          setNewStyle("greenMessage");
+          setResult("Palindrome");
+        }
       }
     });
   };
@@ -29,7 +37,7 @@ export const PalindromeChecker = () => {
         <div>
           <InputTxt
             inputName={"Palavra:"}
-            inputHandler={(e) => checkWord(e.target.value)}
+            inputHandler={(e) => inputHandler(e.target.value)}
           />
           <Result messageTheme={newStyle}>
             <p>Result:{result}</p>
