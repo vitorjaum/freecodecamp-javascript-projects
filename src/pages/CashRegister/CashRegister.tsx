@@ -98,6 +98,7 @@ export const CashRegister = () => {
   //   checkCashRegister(priceExample, clientCashExample, registerCashExample)
   // );
   //////////////////
+
   const coinTable: any = {
     PENNY: 0.01,
     NICKEL: 0.05,
@@ -122,30 +123,21 @@ export const CashRegister = () => {
     "ONE HUNDRED": 100,
   };
 
-  const buttonHandler = (coinName: string, action: string) => {
-    if (action === "lower") {
-      registerCash[coinName] = Number(
-        (registerCash[coinName] - coinTable[coinName]).toFixed(2)
-      );
-    } else {
-      registerCash[coinName] = Number(
-        (registerCash[coinName] + coinTable[coinName]).toFixed(2)
-      );
-    }
-    console.log(registerCash);
-    return registerCash;
-  };
-
   return (
     <>
       <Header />
       <Main>
         <CashBar>
           {Object.keys(registerCash).map((coinName: string, idx) => {
-            const coinValue = registerCash[coinName];
+            const coinValue = coinTable[coinName];
 
             return (
-              <CashButton coinName={coinName} coinValue={coinValue} key={idx} />
+              <CashButton
+                coinName={coinName}
+                coinValue={coinValue}
+                key={idx}
+                registerCash={registerCash}
+              />
             );
           })}
         </CashBar>
@@ -153,6 +145,9 @@ export const CashRegister = () => {
           <div>
             <InputTxt inputName="Preço" placeholder="Preço da compra" />
             <InputTxt inputName="Dinheiro" placeholder="DInheiro do cliente" />
+            <button onClick={() => console.log(registerCash)}>
+              vascoooooooo
+            </button>
           </div>
           <Result>Result: {[registerCash.PENNY]}</Result>
         </div>
