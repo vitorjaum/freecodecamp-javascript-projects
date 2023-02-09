@@ -47,21 +47,24 @@ const Arrow = styled.div`
 `;
 
 type ChallengeLinkProps = {
-  itemsList: string[][];
+  itemsList: string[];
 };
 
 export const ChallengeLink = ({ itemsList }: ChallengeLinkProps) => {
-  const firstLi = itemsList?.[0];
-  const secondLi = itemsList?.[1];
+  const challengeText = itemsList?.[0];
+  const challengeLink = itemsList?.[1];
+  console.log(challengeLink);
   return (
     <Div>
       <Ol>
         <LeftLi>
-          <Link href={firstLi[1]}>{firstLi[0]}</Link>
+          <Link href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">
+            JavaScript Algorithms and Data Structures
+          </Link>
         </LeftLi>
         <Arrow />
         <RightLi>
-          <Link href={secondLi[1]}>{secondLi[0]}</Link>
+          <Link href={challengeLink}>{challengeText}</Link>
         </RightLi>
       </Ol>
     </Div>
