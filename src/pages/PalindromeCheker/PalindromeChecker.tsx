@@ -1,10 +1,20 @@
-import { InputTxt, Title, Header, Main, Result } from "components";
+import {
+  InputTxt,
+  Title,
+  Header,
+  Main,
+  Result,
+  ChallengeLink,
+} from "components";
 import { useState } from "react";
 
 export const PalindromeChecker = () => {
   const [result, setResult] = useState("");
   const [newStyle, setNewStyle] = useState("");
-
+  const bannerItems = [
+    "Palindrome Checker",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker",
+  ];
   const inputHandler = (str: string) => {
     const word = str.toLowerCase().match(/[a-z0-9]/gi);
     const reverseWord = word && [...word];
@@ -32,6 +42,7 @@ export const PalindromeChecker = () => {
   return (
     <>
       <Header />
+      <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Title>Palindrome checker:</Title>
         <div>

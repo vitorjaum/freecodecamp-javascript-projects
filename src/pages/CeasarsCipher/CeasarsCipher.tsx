@@ -1,4 +1,4 @@
-import { Header, InputTxt, Result, Title } from "components";
+import { ChallengeLink, Header, InputTxt, Result, Title } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -38,9 +38,15 @@ export const CeasarsCipher = () => {
     return newStr;
   }
 
+  const bannerItems = [
+    "Caesars Cipher",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher",
+  ];
+
   return (
     <>
       <Header />
+      <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Title>Caesars Cipher</Title>
         <div>

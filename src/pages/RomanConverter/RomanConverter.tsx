@@ -1,4 +1,4 @@
-import { Header, InputTxt, Title, Result } from "components";
+import { Header, InputTxt, Title, Result, ChallengeLink } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -64,9 +64,15 @@ export const RomanConverter: React.FC = () => {
     setResult(thousandRoman);
   }
 
+  const bannerItems = [
+    "Roman Numeral Converter",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter",
+  ];
+
   return (
     <>
       <Header />
+      <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Title>Roman Numeral Converter</Title>
         <div>

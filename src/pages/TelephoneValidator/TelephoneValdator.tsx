@@ -1,4 +1,12 @@
-import { Button, Header, InputTxt, Main, Select, Title } from "components";
+import {
+  Button,
+  ChallengeLink,
+  Header,
+  InputTxt,
+  Main,
+  Select,
+  Title,
+} from "components";
 import { useState } from "react";
 
 const firstRegex = (val: string) => {
@@ -62,10 +70,14 @@ export const TelephoneValidator = () => {
     setPlaceholder(value);
     setMask(value);
   };
-
+  const bannerItems = [
+    "Tephone Number Validator",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator",
+  ];
   return (
     <>
       <Header />
+      <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Title>Telephone Number Validator</Title>
         <div>
