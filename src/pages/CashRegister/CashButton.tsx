@@ -20,8 +20,7 @@ export const CashButton = (props: any) => {
   const { coinName, coinValue, idx, registerCash } = props;
 
   const [coinLength, setCoinLength] = useState(coinValue);
-  registerCash[coinName] = coinLength;
-
+  registerCash[idx][1] = coinLength;
   const buttonHandler = (value: number) => {
     value >= 0 && setCoinLength(Number(value.toFixed(2)));
   };
@@ -30,11 +29,17 @@ export const CashButton = (props: any) => {
     <CashItem key={idx}>
       <p>{coinName}</p>
       <div>
-        <HandlerButton onClick={() => buttonHandler(coinLength - coinValue)}>
+        <HandlerButton
+          type="button"
+          onClick={() => buttonHandler(coinLength - coinValue)}
+        >
           -
         </HandlerButton>
         {<p>{coinLength}</p>}
-        <HandlerButton onClick={() => buttonHandler(coinLength + coinValue)}>
+        <HandlerButton
+          type="button"
+          onClick={() => buttonHandler(coinLength + coinValue)}
+        >
           +
         </HandlerButton>
       </div>
