@@ -1,4 +1,4 @@
-import { Header, InputTxt, Main, Result } from "components";
+import { ChallengeLink, Header, InputTxt, Main, Result } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 import { CashButton } from "./CashButton";
@@ -48,9 +48,15 @@ export const CashRegister = () => {
     setResult(newResult);
   };
 
+  const bannerItems = [
+    "Cash Register",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register",
+  ];
+
   return (
     <>
       <Header />
+      <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Form onSubmit={handleSubmit}>
           <CashBar>
