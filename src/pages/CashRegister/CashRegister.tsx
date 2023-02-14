@@ -39,7 +39,13 @@ export const CashRegister = () => {
     ["ONE HUNDRED:", 100],
   ];
 
-  const [result, setResult]: any = useState({ status: "", change: [] });
+  type resultProps = {
+    status: string;
+    change: (string | number)[][];
+  };
+
+  const [result, setResult] = useState<resultProps>({ status: "", change: [] });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const price = e.currentTarget.price.value;

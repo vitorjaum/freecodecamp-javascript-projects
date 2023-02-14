@@ -1,11 +1,11 @@
 interface changeProps {
   status: string;
-  change: any[];
+  change: (string | number)[][];
 }
 
-export function checkCashRegister(price: number, cash: number, cid: any[]) {
+export function checkCashRegister(price: number, cash: number, cid: []) {
   let change: changeProps = { status: "", change: [] };
-  let troco: any = cash - price;
+  let troco = cash - price;
   let registerCash = 0;
   const currenciesValues = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
 
@@ -26,21 +26,24 @@ export function checkCashRegister(price: number, cash: number, cid: any[]) {
 
   change.status = "OPEN";
   cid.map((coinInfo, idx) => {
-    if (coinInfo[1] > 0) {
-      if (troco - coinInfo[1] >= 0) {
+    const moneyName = coinInfo[0];
+    const moneyValue: number = coinInfo[1];
+    if (moneyValue > 0) {
+      if (troco - moneyValue >= 0) {
         change.change.push(coinInfo);
-        troco = (troco - coinInfo[1]).toFixed(2);
+        troco = Number((troco - moneyValue).toFixed(2));
       } else {
-        const listSize = Math.ceil(coinInfo[1] / currenciesValues[idx]);
+        const listSize = Math.ceil(moneyValue / currenciesValues[idx]);
         let thisCoins = 0;
         const coinList = Array(listSize).fill(currenciesValues[idx]);
         coinList.map((coin) => {
           if (coin <= troco) {
-            troco = (troco - coin).toFixed(2);
+            troco = Number((troco - coin).toFixed(2));
             thisCoins += coin;
           }
         });
-        thisCoins > 0 && change.change.push([coinInfo[0], thisCoins]);
+
+        thisCoins > 0 && change.change.push([moneyName, thisCoins]);
       }
     }
   });
