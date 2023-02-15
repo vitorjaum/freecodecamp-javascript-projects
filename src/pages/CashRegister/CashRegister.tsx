@@ -1,4 +1,4 @@
-import { ChallengeLink, Header, Input, Main, Result } from "components";
+import { Button, ChallengeLink, Header, Input, Main, Result } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 import { CashButton } from "./CashButton";
@@ -16,6 +16,8 @@ const InputsBar = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 `;
 
 const Form = styled.form``;
@@ -98,11 +100,21 @@ export const CashRegister = () => {
                 identifier="cash"
                 placeholder="Dinheiro do cliente"
               />
-              <button type="submit" onClick={() => console.log(registerCash)}>
-                vascoooooooo
-              </button>
+              <Button
+                style={{
+                  width: "22em",
+                  padding: "0.5em",
+                  backgroundColor: "#0a0a23",
+                  borderColor: "#f5f6f7",
+                }}
+                type="submit"
+              >
+                CALCULATE CHANGE
+              </Button>
             </InputsBar>
-            <Result style={{ padding: 10 }}>
+            <Result
+              style={{ padding: "0.3em", width: "18em", margin: "0 auto" }}
+            >
               <div>
                 <p>Status:{result.status}</p>
                 <p>Change:[{result.change}]</p>
