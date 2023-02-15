@@ -15,6 +15,7 @@ export const PalindromeChecker = () => {
     reverseWord?.reverse();
     console.log({ reverseWord });
     if (str == "") {
+      setResult("");
       setNewStyle(`default`);
     }
 

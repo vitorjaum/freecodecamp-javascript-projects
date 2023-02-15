@@ -91,14 +91,14 @@ export const CashRegister = () => {
           <div>
             <InputsBar>
               <Input
-                inputName="Preço:"
+                inputName="Price:"
                 identifier="price"
-                placeholder="Preço da compra"
+                placeholder="Purchase price"
               />
               <Input
-                inputName="Dinheiro:"
+                inputName="Cash:"
                 identifier="cash"
-                placeholder="Dinheiro do cliente"
+                placeholder="Client money"
               />
               <Button
                 style={{

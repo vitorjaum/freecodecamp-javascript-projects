@@ -41,27 +41,27 @@ export const Home: React.FC = () => {
         <ChallengesList>
           <ChallengeItem>
             <RouteLink to="/palindrome-checker">
-              <Link>Verificador de palíndromo</Link>
+              <Link>Palindrome checker</Link>
             </RouteLink>
           </ChallengeItem>
           <ChallengeItem>
             <RouteLink to="/roman-numeral-converter">
-              <Link>Conversor de numerais romanos</Link>
+              <Link>Roman numeral converter</Link>
             </RouteLink>
           </ChallengeItem>
           <ChallengeItem>
-            <RouteLink to="/ceasars-cipher">
-              <Link>Cifra de César</Link>
+            <RouteLink to="/caesars-cipher">
+              <Link>Caesars chiper</Link>
             </RouteLink>
           </ChallengeItem>
           <ChallengeItem>
             <RouteLink to="/telephone-number-validator">
-              <Link>Validador de Número de telefone</Link>
+              <Link>Telephone number validator</Link>
             </RouteLink>
           </ChallengeItem>
           <ChallengeItem>
             <RouteLink to="/cash-register">
-              <Link>Caixa registradora</Link>
+              <Link>Register cash</Link>
             </RouteLink>
           </ChallengeItem>
         </ChallengesList>

@@ -8,7 +8,7 @@ export const Result = styled.div<ResultProps>`
   min-height: 2.5em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 0.5em;
   border: 3px solid;
   margin: 0.5em 0;
   background-color: grey;

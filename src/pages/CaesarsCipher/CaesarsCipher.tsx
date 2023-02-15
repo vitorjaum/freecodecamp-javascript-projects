@@ -11,7 +11,7 @@ const Main = styled.main`
   padding: 0.5em;
 `;
 
-export const CeasarsCipher = () => {
+export const CaesarsCipher = () => {
   const [result, setResult] = useState("");
 
   function rot13(str: string) {
