@@ -1,4 +1,4 @@
-import { ChallengeLink, Header, InputTxt, Main, Result } from "components";
+import { ChallengeLink, Header, Input, Main, Result } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 import { CashButton } from "./CashButton";
@@ -10,6 +10,12 @@ const CashBar = styled.div`
   flex-wrap: wrap;
   padding: 0.4em;
   margin: 1em 0;
+`;
+
+const InputsBar = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 `;
 
 const Form = styled.form``;
@@ -69,7 +75,6 @@ export const CashRegister = () => {
             {registerCash.map((coinInfo: string, idx: number) => {
               const coinName = coinInfo[0];
               const coinValue = coinInfo[1];
-
               return (
                 <CashButton
                   coinName={coinName}
@@ -82,21 +87,21 @@ export const CashRegister = () => {
             })}
           </CashBar>
           <div>
-            <div>
-              <InputTxt
+            <InputsBar>
+              <Input
                 inputName="Preço:"
                 identifier="price"
                 placeholder="Preço da compra"
               />
-              <InputTxt
+              <Input
                 inputName="Dinheiro:"
                 identifier="cash"
-                placeholder="DInheiro do cliente"
+                placeholder="Dinheiro do cliente"
               />
               <button type="submit" onClick={() => console.log(registerCash)}>
                 vascoooooooo
               </button>
-            </div>
+            </InputsBar>
             <Result style={{ padding: 10 }}>
               <div>
                 <p>Status:{result.status}</p>

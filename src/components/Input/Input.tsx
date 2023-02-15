@@ -1,7 +1,6 @@
-import { Result } from "components";
 import styled from "styled-components";
 
-const Input = styled.input`
+const InputComp = styled.input`
   background-color: #0a0a23;
   color: #fff;
   font-weight: bold;
@@ -10,6 +9,7 @@ const Input = styled.input`
   border: solid 1px #3b3b4f;
   height: 2.5em;
   width: 22em;
+  padding-left: 0.5em;
   &:focus {
     border-color: #dfdfe2;
   }
@@ -22,18 +22,22 @@ const Title = styled.label`
   font-size: 18px;
 `;
 
-type inputTxtProps = {
+type InputProps = {
   inputName?: string;
   inputHandler?: React.ChangeEventHandler<HTMLInputElement>;
   value?: any;
   placeholder?: string;
+  inputType?: string;
+  identifier?: string;
 };
 
-export const InputTxt: React.FC<inputTxtProps> = ({
+export const Input: React.FC<InputProps> = ({
   inputName,
   inputHandler,
   value,
   placeholder,
+  inputType,
+  identifier,
 }) => {
   return (
     <div>
@@ -42,11 +46,12 @@ export const InputTxt: React.FC<inputTxtProps> = ({
           <strong>{inputName}</strong>
         </Title>
       )}
-      <Input
-        type="text"
+      <InputComp
+        type={inputType}
         onChange={inputHandler}
         placeholder={placeholder}
         value={value}
+        name={identifier}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { ChallengeLink, Header, InputTxt, Result, Title } from "components";
+import { ChallengeLink, Header, Input, Result, Title } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -50,7 +50,7 @@ export const CeasarsCipher = () => {
       <Main>
         <Title>Caesars Cipher</Title>
         <div>
-          <InputTxt
+          <Input
             inputName="Word:"
             inputHandler={(e) => setResult(rot13(e.target.value))}
           />

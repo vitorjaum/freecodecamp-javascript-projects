@@ -2,7 +2,7 @@ import {
   Button,
   ChallengeLink,
   Header,
-  InputTxt,
+  Input,
   Main,
   Select,
   Title,
@@ -81,7 +81,7 @@ export const TelephoneValidator = () => {
       <Main>
         <Title>Telephone Number Validator</Title>
         <div>
-          <InputTxt
+          <Input
             inputName="Phone Number"
             inputHandler={(e) => setValue(inputValidator(e.target.value, mask))}
             placeholder={placeholder}

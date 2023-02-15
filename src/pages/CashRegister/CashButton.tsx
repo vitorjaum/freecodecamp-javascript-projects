@@ -2,16 +2,17 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const CashItem = styled.div`
-  border: 2px solid white;
-  background-color: #3b3b4f;
-  color: #f5f6f7;
-  font-size: 0.8rem;
   width: 6.9em;
   height: 8em;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: #f5f6f7;
+  background-color: #3b3b4f;
+  padding-top: 4px;
+  border: 2px solid white;
 `;
 
 const ButtonsBar = styled.div`

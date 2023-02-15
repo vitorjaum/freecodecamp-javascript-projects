@@ -53,7 +53,7 @@ type ChallengeLinkProps = {
 export const ChallengeLink = ({ itemsList }: ChallengeLinkProps) => {
   const challengeText = itemsList?.[0];
   const challengeLink = itemsList?.[1];
-  console.log(challengeLink);
+
   return (
     <Div>
       <Ol>

@@ -1,11 +1,4 @@
-import {
-  InputTxt,
-  Title,
-  Header,
-  Main,
-  Result,
-  ChallengeLink,
-} from "components";
+import { Input, Title, Header, Main, Result, ChallengeLink } from "components";
 import { useState } from "react";
 
 export const PalindromeChecker = () => {
@@ -46,8 +39,8 @@ export const PalindromeChecker = () => {
       <Main>
         <Title>Palindrome checker:</Title>
         <div>
-          <InputTxt
-            inputName={"Palavra:"}
+          <Input
+            placeholder="Word"
             inputHandler={(e) => inputHandler(e.target.value)}
           />
           <Result messageTheme={newStyle}>

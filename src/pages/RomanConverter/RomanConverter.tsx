@@ -1,4 +1,4 @@
-import { Header, InputTxt, Title, Result, ChallengeLink } from "components";
+import { Header, Input, Title, Result, ChallengeLink } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -31,24 +31,24 @@ export const RomanConverter: React.FC = () => {
     1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1,
   ];
 
-  function convertToRoman(num: number | any) {
-    let number = "";
-
-    if (num > 0) {
-      if (num > 100000) {
-        getThousands(num);
+  function convertToRoman(num: React.ChangeEvent<HTMLInputElement>) {
+    let inputValue = Number(num.target.value);
+    let result = "";
+    if (inputValue > 0) {
+      if (inputValue > 100000) {
+        getThousands(inputValue);
       } else {
         for (let i = 0; i < romanValues.length; i++) {
-          if (num >= romanValues[i]) {
-            number += romanChar[i];
-            num = num - romanValues[i];
+          if (inputValue >= romanValues[i]) {
+            result += romanChar[i];
+            inputValue = inputValue - romanValues[i];
             i = i - 1;
           }
         }
         setStyle("default");
-        setResult(`Result: ${number}`);
+        setResult(`Result: ${result}`);
       }
-    } else if (num !== "") {
+    } else if (inputValue !== null) {
       setStyle("redMessage");
       setResult("only numbers above 0");
     } else {
@@ -76,7 +76,7 @@ export const RomanConverter: React.FC = () => {
       <Main>
         <Title>Roman Numeral Converter</Title>
         <div>
-          <InputTxt inputHandler={(e: any) => convertToRoman(e.target.value)} />
+          <Input inputHandler={(e) => convertToRoman(e)} />
           <Result messageTheme={style}>
             <p>{result}</p>
           </Result>
