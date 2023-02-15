@@ -6,16 +6,16 @@ import { checkCashRegister } from "./checkCashRegister";
 
 const CashBar = styled.div`
   display: flex;
-
-  background-color: #0a0a23;
   gap: 9px;
-  padding: 5px;
+  flex-wrap: wrap;
+  padding: 0.4em;
+  margin: 1em 0;
 `;
 
 const Form = styled.form``;
 
 export const CashRegister = () => {
-  const coinTable: any = {
+  const coinTable = {
     PENNY: 0.01,
     NICKEL: 0.05,
     DIME: 0.1,
@@ -36,7 +36,7 @@ export const CashRegister = () => {
     ["FIVE:", 5],
     ["TEN:", 10],
     ["TWENTY:", 20],
-    ["ONE HUNDRED:", 100],
+    ["1 HUNDRED:", 100],
   ];
 
   type resultProps = {
