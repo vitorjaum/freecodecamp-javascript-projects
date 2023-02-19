@@ -1,5 +1,18 @@
-import { Input, Title, Header, Main, Result, ChallengeLink } from "components";
+import {
+  Input,
+  Title,
+  Header,
+  Main,
+  Result,
+  ChallengeLink,
+  ChallengeDescription,
+} from "components";
 import { useState } from "react";
+import styled from "styled-components";
+
+const Div = styled.div`
+  width: 22em;
+`;
 
 export const PalindromeChecker = () => {
   const [result, setResult] = useState("");
@@ -13,7 +26,6 @@ export const PalindromeChecker = () => {
     const reverseWord = word && [...word];
     let isPalindrome = true;
     reverseWord?.reverse();
-    console.log({ reverseWord });
     if (str == "") {
       setResult("");
       setNewStyle(`default`);
@@ -39,15 +51,28 @@ export const PalindromeChecker = () => {
       <ChallengeLink itemsList={bannerItems} />
       <Main>
         <Title>Palindrome checker:</Title>
-        <div>
+        <ChallengeDescription>
+          <p>
+            A palindrome is a word or sentence that's spelled the same way both
+            forward and backward, ignoring punctuation, case, and spacing.
+          </p>
+          <p>
+            This project checks the word or sentence and return a message saying
+            if is palindrome or not. And you can choose if words can had
+            symbols. Small details that differentiate it from the original
+            challenge
+          </p>
+        </ChallengeDescription>
+        <Div>
           <Input
-            placeholder="Word"
+            placeholder=""
+            inputName="Word or sentence:"
             inputHandler={(e) => inputHandler(e.target.value)}
           />
-          <Result messageTheme={newStyle}>
-            <p>Result:{result}</p>
+          <Result style={{ width: "83%" }} messageTheme={newStyle}>
+            Result:{result}
           </Result>
-        </div>
+        </Div>
       </Main>
     </>
   );
