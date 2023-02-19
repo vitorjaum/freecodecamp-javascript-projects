@@ -10,17 +10,12 @@ const Ol = styled.ol`
   border: #3b3b4f solid 0.1em;
 `;
 
-const LeftLi = styled.li`
-  width: 70%;
+const Li = styled.li`
   display: flex;
   justify-content: center;
-  background-color: #3b3b4f;
-`;
-
-const RightLi = styled.li`
-  display: flex;
-  justify-content: center;
-  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const Div = styled.div`
@@ -34,6 +29,7 @@ const Link = styled.a`
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   &:hover {
     text-decoration: underline;
   }
@@ -57,15 +53,25 @@ export const ChallengeLink = ({ itemsList }: ChallengeLinkProps) => {
   return (
     <Div>
       <Ol>
-        <LeftLi>
-          <Link href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">
+        <Li
+          style={{
+            backgroundColor: "#3b3b4f",
+            width: "70%",
+          }}
+        >
+          <Link
+            target="_blank"
+            href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+          >
             JavaScript Algorithms and Data Structures
           </Link>
-        </LeftLi>
+        </Li>
         <Arrow />
-        <RightLi>
-          <Link href={challengeLink}>{challengeText}</Link>
-        </RightLi>
+        <Li style={{ width: "50%" }}>
+          <Link target="_blank" href={challengeLink}>
+            {challengeText}
+          </Link>
+        </Li>
       </Ol>
     </Div>
   );
