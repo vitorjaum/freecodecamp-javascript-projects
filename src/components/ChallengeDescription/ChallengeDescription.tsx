@@ -10,4 +10,5 @@ export const ChallengeDescription = styled.div`
   padding: 0.7em;
   border-radius: 10px;
   line-height: 1.5em;
+  margin-bottom: 2em;
 `;

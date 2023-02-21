@@ -1,13 +1,22 @@
-import { Header, Input, Title, Result, ChallengeLink } from "components";
+import {
+  Header,
+  Input,
+  Title,
+  Result,
+  ChallengeLink,
+  ChallengeDescription,
+} from "components";
 import { useState } from "react";
 import styled from "styled-components";
+import { RomanNumeral } from "./helpers/RomanNumeral";
 
 const Main = styled.main`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `;
+
+const Div = styled.div``;
 
 export const RomanConverter: React.FC = () => {
   const [result, setResult] = useState("Result:");
@@ -73,14 +82,19 @@ export const RomanConverter: React.FC = () => {
     <>
       <Header />
       <ChallengeLink itemsList={bannerItems} />
+      <Title style={{ textAlign: "center" }}>Roman Numeral Converter</Title>
       <Main>
-        <Title>Roman Numeral Converter</Title>
-        <div>
-          <Input inputHandler={(e) => convertToRoman(e)} />
+        <ChallengeDescription>
+          <p>This project convert the given number into a roman numeral.</p>
+          <p>Check the schedule</p>
+          <RomanNumeral />
+        </ChallengeDescription>
+        <Div>
+          <Input inputName="Number:" inputHandler={(e) => convertToRoman(e)} />
           <Result messageTheme={style}>
             <p>{result}</p>
           </Result>
-        </div>
+        </Div>
       </Main>
     </>
   );
