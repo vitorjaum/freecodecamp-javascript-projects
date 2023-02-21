@@ -7,3 +7,4 @@ export * from "./Select";
 export * from "./Title";
 export * from "./ChallengeLink";
 export * from "./ChallengeDescription";
+export * from "./Emphasis";
