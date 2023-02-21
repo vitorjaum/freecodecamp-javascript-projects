@@ -12,6 +12,9 @@ import styled from "styled-components";
 
 const Div = styled.div`
   width: 22em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const PalindromeChecker = () => {

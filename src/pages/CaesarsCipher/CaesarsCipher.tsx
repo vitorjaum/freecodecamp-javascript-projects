@@ -1,4 +1,11 @@
-import { ChallengeLink, Header, Input, Result, Title } from "components";
+import {
+  ChallengeDescription,
+  ChallengeLink,
+  Header,
+  Input,
+  Result,
+  Title,
+} from "components";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -47,8 +54,19 @@ export const CaesarsCipher = () => {
     <>
       <Header />
       <ChallengeLink itemsList={bannerItems} />
+      <Title>Caesars Cipher</Title>
       <Main>
-        <Title>Caesars Cipher</Title>
+        <ChallengeDescription>
+          <p>
+            One of the simplest and most widely known ciphers is a Caesar
+            cipher, also known as a shift cipher. In a shift cipher the meanings
+            of the letters are shifted by some set amount.
+          </p>
+          <p>
+            A common modern use is the ROT13 cipher, where the values of the
+            letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on.
+          </p>
+        </ChallengeDescription>
         <div>
           <Input
             inputName="Word:"
