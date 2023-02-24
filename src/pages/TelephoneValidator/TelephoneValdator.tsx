@@ -1,5 +1,6 @@
 import {
   Button,
+  ChallengeDescription,
   ChallengeLink,
   Header,
   Input,
@@ -8,6 +9,7 @@ import {
   Title,
 } from "components";
 import { useState } from "react";
+import styled from "styled-components";
 
 const firstRegex = (val: string) => {
   // 555-555-5555
@@ -40,6 +42,13 @@ const fourthRegex = (val: string) => {
   // 5555555555
   return val.replace(/\D/g, "").replace(/(\d{10})(\d)/, "$1");
 };
+
+const Section = styled.section`
+  background-color: #2a2a40;
+  width: 100%;
+  border-left: white solid 0.3em;
+  padding: 0.5em;
+`;
 
 export const TelephoneValidator = () => {
   const [mask, setMask] = useState("firstRegex");
@@ -74,12 +83,40 @@ export const TelephoneValidator = () => {
     "Tephone Number Validator",
     "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator",
   ];
+
   return (
     <>
       <Header />
       <ChallengeLink itemsList={bannerItems} />
-      <Main>
-        <Title>Telephone Number Validator</Title>
+      <Title>Telephone Number Validator</Title>
+      <Main
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap",
+        }}
+      >
+        <ChallengeDescription>
+          <p>The following are examples of valid formats for US numbers:</p>
+          <Section>
+            <p>555-555-5555</p>
+            <p>(555)555-5555</p>
+            <p>(555) 555-5555</p>
+            <p>555 555 5555</p>
+            <p>5555555555</p>
+            <p>1 555 555 5555</p>
+          </Section>
+          <p>
+            This project provides input masks made with regex and you can choose
+            the use of country number.
+          </p>
+          <p>
+            <br />
+            The challenge requires a boolean return and have strings to test.
+            Here regex is turned into input mask and use of country code is
+            optional for any number
+          </p>
+        </ChallengeDescription>
         <div>
           <Input
             inputName="Phone Number"
