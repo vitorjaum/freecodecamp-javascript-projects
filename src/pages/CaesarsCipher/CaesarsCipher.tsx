@@ -6,6 +6,7 @@ import {
   Result,
   Title,
 } from "components";
+import { Emphasis } from "components/Emphasis";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -64,7 +65,12 @@ export const CaesarsCipher = () => {
           </p>
           <p>
             A common modern use is the ROT13 cipher, where the values of the
-            letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on.
+            letters are shifted by 13 places. Thus <Emphasis>A ↔ N</Emphasis>,
+            <Emphasis>B ↔ O</Emphasis> and so on.
+          </p>
+          <p>
+            This project translate texts to the caesars cipher{" "}
+            <Emphasis>ROT13</Emphasis>
           </p>
         </ChallengeDescription>
         <div>
