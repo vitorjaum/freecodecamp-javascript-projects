@@ -78,7 +78,7 @@ export const CaesarsCipher = () => {
             inputName="Word:"
             inputHandler={(e) => setResult(rot13(e.target.value))}
           />
-          <Result>Resultado: {result}</Result>
+          <Result>Result: {result}</Result>
         </div>
       </Main>
     </>

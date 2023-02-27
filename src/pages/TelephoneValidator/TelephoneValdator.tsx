@@ -119,7 +119,7 @@ export const TelephoneValidator = () => {
         </ChallengeDescription>
         <div>
           <Input
-            inputName="Phone Number"
+            inputName="Phone Number:"
             inputHandler={(e) => setValue(inputValidator(e.target.value, mask))}
             placeholder={placeholder}
             value={`${codeCond ? codeCountry : ""}${value}`}

@@ -2,7 +2,6 @@ import {
   Input,
   Title,
   Header,
-  Main,
   Result,
   ChallengeLink,
   ChallengeDescription,
@@ -15,6 +14,15 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+`;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 0;
+  padding: 0.5em;
 `;
 
 export const PalindromeChecker = () => {
