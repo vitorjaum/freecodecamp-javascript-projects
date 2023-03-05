@@ -16,10 +16,14 @@ const Main = styled.main`
   flex-wrap: wrap;
 `;
 
+const Indent = styled.span`
+  text-decoration: overline;
+`;
+
 const Div = styled.div``;
 
 export const RomanConverter: React.FC = () => {
-  const [result, setResult] = useState("Result:");
+  const [result, setResult] = useState<string | JSX.Element>("Result:");
   const [style, setStyle] = useState("");
   const romanChar: string[] = [
     "M",
@@ -40,26 +44,19 @@ export const RomanConverter: React.FC = () => {
     1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1,
   ];
 
-  function convertToRoman(num: React.ChangeEvent<HTMLInputElement>) {
+  function inputHandler(num: React.ChangeEvent<HTMLInputElement>) {
     let inputValue = Number(num.target.value);
-    let result = "";
+
     if (inputValue > 0) {
-      if (inputValue > 100000) {
-        getThousands(inputValue);
+      if (inputValue >= 4000) {
+        setResult(getThousands(inputValue));
       } else {
-        for (let i = 0; i < romanValues.length; i++) {
-          if (inputValue >= romanValues[i]) {
-            result += romanChar[i];
-            inputValue = inputValue - romanValues[i];
-            i = i - 1;
-          }
-        }
         setStyle("default");
-        setResult(`Result: ${result}`);
+        setResult(`Result: ${getRomanNumber(inputValue)}`);
       }
-    } else if (inputValue !== null) {
+    } else if (inputValue !== 0) {
       setStyle("redMessage");
-      setResult("only numbers above 0");
+      setResult("only numbers");
     } else {
       setStyle("default");
       setResult("Result:");
@@ -67,10 +64,29 @@ export const RomanConverter: React.FC = () => {
   }
 
   function getThousands(thousandValue: number) {
-    let thousandRoman = "";
-    const thousandsChar = Array(thousandValue / 1000).fill("M");
-    thousandsChar.map((char) => (thousandRoman += char));
-    setResult(thousandRoman);
+    const digit = String(thousandValue);
+    if (digit.length === 4) {
+      const thousandChar = getRomanNumber(Number(digit.slice(0, 1)));
+      return (
+        <p>
+          Result: <Indent>{thousandChar}</Indent>
+          {getRomanNumber(Number(digit.slice(-3)))}
+        </p>
+      );
+    }
+    return "";
+  }
+
+  function getRomanNumber(inputValue: number) {
+    let result = "";
+    for (let i = 0; i < romanValues.length; i++) {
+      if (inputValue >= romanValues[i]) {
+        result += romanChar[i];
+        inputValue = inputValue - romanValues[i];
+        i = i - 1;
+      }
+    }
+    return result;
   }
 
   const bannerItems = [
@@ -90,9 +106,9 @@ export const RomanConverter: React.FC = () => {
           <RomanNumeral />
         </ChallengeDescription>
         <Div>
-          <Input inputName="Number:" inputHandler={(e) => convertToRoman(e)} />
-          <Result messageTheme={style}>
-            <p>{result}</p>
+          <Input inputName="Number:" inputHandler={(e) => inputHandler(e)} />
+          <Result style={{ maxWidth: "25em" }} messageTheme={style}>
+            {result}
           </Result>
         </Div>
       </Main>

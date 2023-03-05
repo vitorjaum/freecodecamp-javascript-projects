@@ -11,4 +11,5 @@ export const ChallengeDescription = styled.div`
   border-radius: 10px;
   line-height: 1.5em;
   margin-bottom: 2em;
+  height: 100%;
 `;
