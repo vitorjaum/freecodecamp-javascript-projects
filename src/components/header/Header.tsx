@@ -29,7 +29,7 @@ const Title = styled.a`
 export const Header = () => {
   return (
     <HeaderSite>
-      <Title href="/">
+      <Title href="/freecodecamp-javascript-projects">
         <p>Desafios FreeCodeCamp</p>
         <Logo src="logo.jpg" alt="" />
       </Title>
