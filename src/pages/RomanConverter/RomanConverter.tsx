@@ -50,6 +50,7 @@ export const RomanConverter: React.FC = () => {
     if (inputValue > 0) {
       if (inputValue >= 4000) {
         setResult(getThousands(inputValue));
+        setStyle("default");
       } else {
         setStyle("default");
         setResult(`Result: ${getRomanNumber(inputValue)}`);
@@ -65,16 +66,26 @@ export const RomanConverter: React.FC = () => {
 
   function getThousands(thousandValue: number) {
     const digit = String(thousandValue);
+    let thousandChar = "";
+
     if (digit.length === 4) {
-      const thousandChar = getRomanNumber(Number(digit.slice(0, 1)));
-      return (
-        <p>
-          Result: <Indent>{thousandChar}</Indent>
-          {getRomanNumber(Number(digit.slice(-3)))}
-        </p>
-      );
+      thousandChar = getRomanNumber(Number(digit.slice(0, 1)));
     }
-    return "";
+    if (digit.length === 5) {
+      thousandChar = getRomanNumber(Number(digit.slice(0, 2)));
+    }
+    if (digit.length === 6) {
+      thousandChar = getRomanNumber(Number(digit.slice(0, 3)));
+    }
+    if (digit.length === 7) {
+      thousandChar = getRomanNumber(Number(digit.slice(0, 4)));
+    }
+    return (
+      <p>
+        Result: <Indent>{thousandChar}</Indent>
+        {getRomanNumber(Number(digit.slice(-3)))}
+      </p>
+    );
   }
 
   function getRomanNumber(inputValue: number) {
