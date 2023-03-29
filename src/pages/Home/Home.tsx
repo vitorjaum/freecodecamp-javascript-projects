@@ -1,9 +1,9 @@
+import { Footer } from "components/Footer";
 import { Header } from "components/Header";
 import { Link as RouteLink } from "react-router-dom";
 import styled from "styled-components";
 
 const ChallengesList = styled.ul`
-  margin-top: 2em;
   width: 30em;
 `;
 
@@ -31,6 +31,7 @@ const Link = styled.div`
 const Main = styled.main`
   display: flex;
   justify-content: center;
+  padding: 2.5em;
 `;
 
 export const Home: React.FC = () => {
@@ -66,6 +67,7 @@ export const Home: React.FC = () => {
           </ChallengeItem>
         </ChallengesList>
       </Main>
+      <Footer />
     </>
   );
 };

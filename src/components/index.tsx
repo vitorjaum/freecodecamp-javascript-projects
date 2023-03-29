@@ -8,3 +8,4 @@ export * from "./Title";
 export * from "./ChallengeLink";
 export * from "./ChallengeDescription";
 export * from "./Emphasis";
+export * from "./Icon";
