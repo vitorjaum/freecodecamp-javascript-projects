@@ -1,15 +1,23 @@
 {
   "files": {
     "main.css": "/freecodecamp-javascript-projects/static/css/main.b02901ac.css",
-    "main.js": "/freecodecamp-javascript-projects/static/js/main.e510e5db.js",
+    "main.js": "/freecodecamp-javascript-projects/static/js/main.2c6758b2.js",
+    "static/js/727.517afe7f.chunk.js": "/freecodecamp-javascript-projects/static/js/727.517afe7f.chunk.js",
+    "static/js/659.2e25e021.chunk.js": "/freecodecamp-javascript-projects/static/js/659.2e25e021.chunk.js",
+    "static/js/50.7293b787.chunk.js": "/freecodecamp-javascript-projects/static/js/50.7293b787.chunk.js",
+    "static/js/314.a4a06f53.chunk.js": "/freecodecamp-javascript-projects/static/js/314.a4a06f53.chunk.js",
     "static/js/496.d86dd6d3.chunk.js": "/freecodecamp-javascript-projects/static/js/496.d86dd6d3.chunk.js",
+    "static/media/instagram.svg": "/freecodecamp-javascript-projects/static/media/instagram.5c04d9d79e587c5df571.svg",
+    "static/media/github.svg": "/freecodecamp-javascript-projects/static/media/github.1329e87f31a1852bb140.svg",
     "index.html": "/freecodecamp-javascript-projects/index.html",
+    "static/media/linkedin.svg": "/freecodecamp-javascript-projects/static/media/linkedin.9533afc5cbaec6810a29.svg",
+    "static/media/twitch.svg": "/freecodecamp-javascript-projects/static/media/twitch.a141b8bfec80be7800fc.svg",
     "main.b02901ac.css.map": "/freecodecamp-javascript-projects/static/css/main.b02901ac.css.map",
-    "main.e510e5db.js.map": "/freecodecamp-javascript-projects/static/js/main.e510e5db.js.map",
+    "main.2c6758b2.js.map": "/freecodecamp-javascript-projects/static/js/main.2c6758b2.js.map",
     "496.d86dd6d3.chunk.js.map": "/freecodecamp-javascript-projects/static/js/496.d86dd6d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b02901ac.css",
-    "static/js/main.e510e5db.js"
+    "static/js/main.2c6758b2.js"
   ]
 }

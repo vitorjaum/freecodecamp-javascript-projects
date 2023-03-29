@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfreecodecamp_javascript_projects=self.webpackChunkfreecodecamp_javascript_projects||[]).push([[659],{659:function(e,c,s){e.exports=s.p+"static/media/instagram.5c04d9d79e587c5df571.svg"}}]);
