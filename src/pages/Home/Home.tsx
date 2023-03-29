@@ -1,5 +1,4 @@
-import { Footer } from "components/Footer";
-import { Header } from "components/Header";
+import { Main, Header, Footer } from "components";
 import { Link as RouteLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -26,12 +25,6 @@ const Link = styled.div`
     background-color: #f5f6f7;
     color: #3b3b4f;
   }
-`;
-
-const Main = styled.main`
-  display: flex;
-  justify-content: center;
-  padding: 2.5em;
 `;
 
 export const Home: React.FC = () => {
