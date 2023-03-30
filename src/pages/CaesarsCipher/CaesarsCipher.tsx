@@ -1,12 +1,14 @@
 import {
   ChallengeDescription,
   ChallengeLink,
+  Emphasis,
+  Footer,
   Header,
   Input,
   Result,
   Title,
 } from "components";
-import { Emphasis } from "components/Emphasis";
+
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -81,6 +83,7 @@ export const CaesarsCipher = () => {
           <Result>Result: {result}</Result>
         </div>
       </Main>
+      <Footer />
     </>
   );
 };

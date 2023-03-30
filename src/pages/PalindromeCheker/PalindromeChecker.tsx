@@ -5,6 +5,7 @@ import {
   Result,
   ChallengeLink,
   ChallengeDescription,
+  Footer,
 } from "components";
 import { useState } from "react";
 import styled from "styled-components";
@@ -85,6 +86,7 @@ export const PalindromeChecker = () => {
           </Result>
         </Div>
       </Main>
+      <Footer />
     </>
   );
 };

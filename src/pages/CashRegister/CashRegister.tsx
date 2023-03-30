@@ -3,6 +3,7 @@ import {
   ChallengeDescription,
   ChallengeLink,
   Emphasis,
+  Footer,
   Header,
   Input,
   Main,
@@ -179,6 +180,7 @@ export const CashRegister = () => {
           </Form>
         </Div>
       </Main>
+      <Footer />
     </>
   );
 };

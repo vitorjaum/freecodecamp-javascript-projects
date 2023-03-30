@@ -5,6 +5,7 @@ import {
   Result,
   ChallengeLink,
   ChallengeDescription,
+  Footer,
 } from "components";
 import { useState } from "react";
 import styled from "styled-components";
@@ -123,6 +124,7 @@ export const RomanConverter: React.FC = () => {
           </Result>
         </Div>
       </Main>
+      <Footer />
     </>
   );
 };

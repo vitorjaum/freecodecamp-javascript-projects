@@ -2,6 +2,7 @@ import {
   Button,
   ChallengeDescription,
   ChallengeLink,
+  Footer,
   Header,
   Input,
   Main,
@@ -88,7 +89,7 @@ export const TelephoneValidator = () => {
     <>
       <Header />
       <ChallengeLink itemsList={bannerItems} />
-      <Title>Telephone Number Validator</Title>
+      <Title style={{ marginBottom: 0 }}>Telephone Number Validator</Title>
       <Main
         style={{
           flexDirection: "row",
@@ -96,7 +97,7 @@ export const TelephoneValidator = () => {
           flexWrap: "wrap",
         }}
       >
-        <ChallengeDescription>
+        <ChallengeDescription style={{ marginBottom: ".5em" }}>
           <p>The following are examples of valid formats for US numbers:</p>
           <Section>
             <p>555-555-5555</p>
@@ -107,14 +108,14 @@ export const TelephoneValidator = () => {
             <p>1 555 555 5555</p>
           </Section>
           <p>
-            This project provides input masks made with regex and you can choose
-            the use of country number.
+            This project offers input masks created with regex. You have the
+            option to select the country code.
           </p>
           <p>
             <br />
-            The challenge requires a boolean return and have strings to test.
-            Here regex is turned into input mask and use of country code is
-            optional for any number
+            The original challenge mandates a boolean output and involves
+            testing strings. This project achieves this by converting regular
+            expressions into input masks.
           </p>
         </ChallengeDescription>
         <div>
@@ -133,6 +134,7 @@ export const TelephoneValidator = () => {
           </Select>
         </div>
       </Main>
+      <Footer />
     </>
   );
 };
