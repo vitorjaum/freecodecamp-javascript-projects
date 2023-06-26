@@ -25,7 +25,7 @@ const A = styled.a``;
 
 const Section = styled.section`
   padding: 1em;
-  width: 40em;
+  max-width: 40em;
   display: flex;
   align-items: center;
   justify-content: center;

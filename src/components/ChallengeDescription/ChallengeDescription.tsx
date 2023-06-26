@@ -6,7 +6,7 @@ export const ChallengeDescription = styled.div`
   justify-content: center;
   color: #f5f6f7;
   background-color: #2a2a40;
-  width: 30em;
+  max-width: 30em;
   padding: 0.7em;
   border-radius: 10px;
   line-height: 1.5em;
