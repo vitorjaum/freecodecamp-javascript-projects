@@ -14,5 +14,14 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
 
    body {
       background-color: ${({ theme }) => theme.colors.primaryColor};
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+   }
+
+   #root{
+      flex:1;
+      display: flex;
+      flex-direction: column;
    }
 `;

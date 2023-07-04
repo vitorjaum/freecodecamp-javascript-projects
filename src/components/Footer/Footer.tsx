@@ -6,12 +6,12 @@ const FooterComp = styled.footer`
   width: 100%;
   font-family: "Hack-ZeroSlash", monospace;
   color: #dfdfe2;
-  margin-top: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  flex: 1;
 `;
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
