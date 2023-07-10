@@ -19,9 +19,9 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
       flex-direction: column;
    }
 
-   #root{
-      flex:1;
+   #root{      
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
    }
 `;

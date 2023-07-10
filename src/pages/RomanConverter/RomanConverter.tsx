@@ -6,16 +6,17 @@ import {
   ChallengeLink,
   ChallengeDescription,
   Footer,
+  Main,
 } from "components";
 import { useState } from "react";
 import styled from "styled-components";
 import { RomanNumeral } from "./helpers/RomanNumeral";
 
-const Main = styled.main`
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-`;
+// const Main = styled.main`
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
+// `;
 
 const Indent = styled.span`
   text-decoration: overline;
@@ -111,7 +112,13 @@ export const RomanConverter: React.FC = () => {
       <Header />
       <ChallengeLink itemsList={bannerItems} />
       <Title style={{ textAlign: "center" }}>Roman Numeral Converter</Title>
-      <Main>
+      <Main
+        style={{
+          flexDirection: "row",
+          alignItems: "start",
+          justifyContent: "space-evenly",
+        }}
+      >
         <ChallengeDescription>
           <p>This project convert the given number into a roman numeral.</p>
           <p>Check the schedule</p>
@@ -119,9 +126,7 @@ export const RomanConverter: React.FC = () => {
         </ChallengeDescription>
         <Div>
           <Input inputName="Number:" inputHandler={(e) => inputHandler(e)} />
-          <Result style={{ maxWidth: "25em" }} messageTheme={style}>
-            {result}
-          </Result>
+          <Result messageTheme={style}>{result}</Result>
         </Div>
       </Main>
       <Footer />

@@ -5,21 +5,12 @@ import {
   Footer,
   Header,
   Input,
+  Main,
   Result,
   Title,
 } from "components";
 
 import { useState } from "react";
-import styled from "styled-components";
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 0;
-  padding: 0.5em;
-`;
 
 export const CaesarsCipher = () => {
   const [result, setResult] = useState("");

@@ -6,25 +6,9 @@ import {
   ChallengeLink,
   ChallengeDescription,
   Footer,
+  Main,
 } from "components";
 import { useState } from "react";
-import styled from "styled-components";
-
-const Div = styled.div`
-  width: 22em;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 0;
-  padding: 0.5em;
-`;
 
 export const PalindromeChecker = () => {
   const [result, setResult] = useState("");
@@ -75,16 +59,14 @@ export const PalindromeChecker = () => {
             challenge
           </p>
         </ChallengeDescription>
-        <Div>
+        <div>
           <Input
             placeholder=""
             inputName="Word or sentence:"
             inputHandler={(e) => inputHandler(e.target.value)}
           />
-          <Result style={{ width: "83%" }} messageTheme={newStyle}>
-            Result:{result}
-          </Result>
-        </Div>
+          <Result messageTheme={newStyle}>Result:{result}</Result>
+        </div>
       </Main>
       <Footer />
     </>

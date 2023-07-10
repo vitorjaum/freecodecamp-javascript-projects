@@ -9,7 +9,6 @@ const FooterComp = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
 `;
 
 const Ul = styled.ul`

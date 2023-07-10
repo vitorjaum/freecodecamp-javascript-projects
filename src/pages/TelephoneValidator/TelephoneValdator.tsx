@@ -90,13 +90,7 @@ export const TelephoneValidator = () => {
       <Header />
       <ChallengeLink itemsList={bannerItems} />
       <Title style={{ marginBottom: 0 }}>Telephone Number Validator</Title>
-      <Main
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap",
-        }}
-      >
+      <Main style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
         <ChallengeDescription style={{ marginBottom: ".5em" }}>
           <p>The following are examples of valid formats for US numbers:</p>
           <Section>

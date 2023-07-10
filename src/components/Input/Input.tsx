@@ -52,6 +52,7 @@ export const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         value={value}
         name={identifier}
+        autoFocus
       />
     </div>
   );

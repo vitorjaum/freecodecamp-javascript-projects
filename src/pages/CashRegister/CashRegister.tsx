@@ -93,6 +93,7 @@ export const CashRegister = () => {
         style={{
           flexDirection: "row",
           justifyContent: "space-evenly",
+          alignItems: "start",
         }}
       >
         <ChallengeDescription>
