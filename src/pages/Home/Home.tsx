@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <Main>
+      <Main style={{ flexDirection: "row", alignItems: "start" }}>
         <ChallengesList>
           <ChallengeItem>
             <RouteLink to="/palindrome-checker">
