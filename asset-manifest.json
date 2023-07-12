@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/freecodecamp-javascript-projects/static/css/main.b02901ac.css",
-    "main.js": "/freecodecamp-javascript-projects/static/js/main.2c6758b2.js",
+    "main.css": "/freecodecamp-javascript-projects/static/css/main.6b057e0d.css",
+    "main.js": "/freecodecamp-javascript-projects/static/js/main.4b6b69d6.js",
     "static/js/727.517afe7f.chunk.js": "/freecodecamp-javascript-projects/static/js/727.517afe7f.chunk.js",
     "static/js/659.2e25e021.chunk.js": "/freecodecamp-javascript-projects/static/js/659.2e25e021.chunk.js",
     "static/js/50.7293b787.chunk.js": "/freecodecamp-javascript-projects/static/js/50.7293b787.chunk.js",
@@ -12,12 +12,12 @@
     "index.html": "/freecodecamp-javascript-projects/index.html",
     "static/media/linkedin.svg": "/freecodecamp-javascript-projects/static/media/linkedin.9533afc5cbaec6810a29.svg",
     "static/media/twitch.svg": "/freecodecamp-javascript-projects/static/media/twitch.a141b8bfec80be7800fc.svg",
-    "main.b02901ac.css.map": "/freecodecamp-javascript-projects/static/css/main.b02901ac.css.map",
-    "main.2c6758b2.js.map": "/freecodecamp-javascript-projects/static/js/main.2c6758b2.js.map",
+    "main.6b057e0d.css.map": "/freecodecamp-javascript-projects/static/css/main.6b057e0d.css.map",
+    "main.4b6b69d6.js.map": "/freecodecamp-javascript-projects/static/js/main.4b6b69d6.js.map",
     "496.d86dd6d3.chunk.js.map": "/freecodecamp-javascript-projects/static/js/496.d86dd6d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b02901ac.css",
-    "static/js/main.2c6758b2.js"
+    "static/css/main.6b057e0d.css",
+    "static/js/main.4b6b69d6.js"
   ]
 }
